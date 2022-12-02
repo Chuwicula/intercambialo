@@ -1,21 +1,48 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    
     <h:head>
-        <title>Facelet Title</title>
+        <title>Intercambialo</title>
+        <link rel="stylesheet" href="css/style.css"/>
     </h:head>
     <h:body>
-        #{helloWorld.mensaje()}
-    </h:body>
-    <h:form>
-        <h:commandButton action="#{helloWorld.accion()}"/>
-    </h:form>
-    <h:dataTable value="#{helloWorld.datos}" var="dato">
-        <h:column>
-            <h:outputLabel value="#{dato}"/>
-        </h:column>
-    </h:dataTable>
-    
+        <div class="center">
+            <p:card style="width: 25rem; margin-bottom: 2em" >
+                <f:facet name="title">
+                    Iniciar sesión
+                </f:facet>
+                <h:form>
+                    <div class="card">
+                        <div class="field">                            
+                            <p:outputLabel for="username" styleClass="block">Usuario</p:outputLabel>
+                            <br/>
+                            <p:inputText id="username" styleClass="block" placeholder="Usuario"/>
+                            <br/>                                                       
+                        </div>   
+                        <br/>
+                        <div class="field">                            
+                            <p:outputLabel for="password" styleClass="block">Contraseña</p:outputLabel>
+                            <br/>
+                            <p:password id="password"  toggleMask="true" redisplay="true"/>                            
+                            <br/>                                                       
+                        </div> 
+                        <br/>
+                        <p:commandButton type="button" value="Iniciar sesión" styleClass="rounded-button ui-button-danger" />
+                    </div>
+                    <div class="card">
+                        <br/>
+                        <p:link outcome="gestionusuarios/recuperarcontrasena" value="Recuperar contraseña"/>
+                        <br/>
+                        <p:link outcome="gestionusuarios/registrarse" value="Registrarse"/>
+                        <br/>
+                    </div>
+                </h:form>                                
+            </p:card>
+        </div>
+    </h:body>    
 </html>
 
