@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 public abstract class AbstractMapper <T, K>{
     
-    @PersistenceContext
+    @PersistenceContext(unitName = "intercambialoPU")
     public static EntityManager em;
     
     public abstract T buscar(K id);

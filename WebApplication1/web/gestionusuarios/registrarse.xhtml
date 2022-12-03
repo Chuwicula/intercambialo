@@ -10,6 +10,75 @@
         <link rel="stylesheet" href="css/style.css"/>
     </h:head>
     <h:body>
+        
+          <div class="center">
+            <p:card style="margin-bottom: 2em" >
+                <f:facet name="title">
+                    Registro
+                </f:facet>
+                <h:form>
+                    <div class="card">
+                        <div class="field">                            
+                            <p:outputLabel for="name" styleClass="block">Nombre</p:outputLabel>
+                        
+                            <p:inputText id="name" styleClass="block" placeholder="Nombre"/>
+                            
+                             <p:outputLabel for="lastName" styleClass="block">Apellidos</p:outputLabel>
+                           
+                            <p:inputText id="lastName" styleClass="block" placeholder="Apellidos"/>
+                            
+                        </div>   
+                        <br/>
+                        <div class="field">                            
+                            <p:outputLabel for="email" styleClass="block">Correo electrónico</p:outputLabel>
+                            
+                            <p:inputText id="email" />                            
+                         
+                            
+                        </div> 
+                        <div class="field">
+                            <p:outputLabel for="country" styleClass="block">País</p:outputLabel>
+                            
+                            <p:inputText id="country" />
+                            
+                             <p:outputLabel for="city" styleClass="block">Ciudad</p:outputLabel>
+                            
+                            <p:inputText id="city" />
+                        </div>
+                        
+                        <div class="field">
+                            <p:outputLabel for="neighborhood" styleClass="block">Barrio</p:outputLabel>
+                            
+                            <p:inputText id="neighborhood" />
+                            
+                             <p:outputLabel for="Address" styleClass="block">Dirección</p:outputLabel>
+                            
+                            <p:inputText id="Address" />
+                        </div>
+                        
+                        <div class="field">
+                            <p:outputLabel for="suscription" styleClass="block">Suscripción</p:outputLabel>
+                            
+                            <p:selectOneRadio id="suscription" >
+                                <f:selectItem itemLabel="Mensual" itemValue="1"/>
+                                <f:selectItem itemLabel="Anual" itemValue="2"/>
+                            </p:selectOneRadio>
+                            
+                            
+                        </div>
+                        <br/>
+                        
+                        
+                        
+                        <p:commandButton value="Registrarse" 
+                                         styleClass="rounded-button ui-button-danger"  
+                                         ajax="false"
+                                         action="#{inicioBean.iniciarSesion()}"/>
+                    </div>
+                    
+                </h:form>                                
+            </p:card>
+        </div>
        
     </h:body>    
 </html>
